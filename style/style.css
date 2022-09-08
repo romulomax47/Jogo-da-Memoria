@@ -7,15 +7,19 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    width: 100vw;
-    height: 100vh;
     position: relative;
+    height: 100vh;
+    display: flex;
+
+    background-color: #ededed;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .card{
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     position: relative;
 
     transform-style: preserve-3d;
@@ -49,6 +53,8 @@ body{
     background-color:  #800080;
 
     cursor: pointer;
+
+   
 }
 
 
@@ -88,4 +94,11 @@ body{
     cursor: pointer;
 
     margin-top: 10px;
+}
+#game{
+  
+    max-width: 700px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
 }
