@@ -3,95 +3,44 @@ const back = 'back'
 const card = 'card'
 
 
-const selecoes = [
-    'brasil',
-    'argentina',
-    'alemanha',
-    'catar',
-    'frança',
-    'bélgica',
-    'croácia',
-    'inglaterra',
-    'portugal',
-    'senegal'
-]
+let selecoes;
 
-let lockMode = false;
-let firstCard = null;
-let secondCard = null;
+let gameBoard = document.getElementById('game')
+let btn = document.getElementById('btn')
 
 
-let cards = [];
+btn.addEventListener('click', ()=>{
+    window.onload()
+    
+    starGame()
+    
+});
+
 
 starGame()
 
 function starGame() {
 
-    const create = createCardfronSele(selecoes)
-    shuffleCars(create);
-    iniciaizarCards(create)
-
-
+    iniciaizarCards(game.createCardfronSele(game.selecoes))
 
 }
-// duplica ass cartas
-function createCardfronSele(selecoes) {
-
-    for (let selecao of selecoes) {
-        cards.push(createPairFromSelecoes(selecao))
-
-    }
-    return cards.flatMap(card => card)
-}
-
-function createPairFromSelecoes(sele) {
-    return [
-        {
-            id: createIdWhithSele(sele),
-            icon: sele,
-            flip: false
-        },
-        {
-            id: createIdWhithSele(sele),
-            icon: sele,
-            flip: false
-        }
-
-    ]
-}
-//ebaralha as cartas
-function shuffleCars(selecoes) {
-    let currentIndex = cards.length;
-    let randomIndex = 0;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-        [selecoes[randomIndex], selecoes[currentIndex]] = [selecoes[currentIndex], selecoes[randomIndex]]
-
-    }
-
-}
-
 
 function iniciaizarCards(cards) {
-    console.log(cards)
-    let gameBoard = document.getElementById('game')
+    
+    gameBoard.innerHTML = '';
 
-    cards.forEach((card) => {
-
-        // console.log(card.icon)
-
+    cards.forEach((card)=>{
         let cardElement = document.createElement('div')
         cardElement.id = card.id;
-        cardElement.classList.add('card')
+        cardElement.classList.add('card');
         cardElement.dataset.icon = card.icon;
 
-        createCardContent(card, cardElement)
+        createCardContent(card, cardElement);
 
         cardElement.addEventListener('click', flipCard)
 
-        gameBoard.appendChild(cardElement);
+
+        gameBoard.appendChild(cardElement)
     })
 
 }
@@ -121,73 +70,28 @@ function createElementFace(face, card, element) {
 
 }
 
+
 function flipCard() {
-  
-    if (setCard(this.id)) {
+    // console.log(this)
+    if(game.setCard(this)){
+
         this.classList.add('flip')
+        if(game.secondCard){
 
-        if (ckeckMatch()) {
-            console.log(ckeckMatch())
-            clearCard();
-        } else {
-
-     
-                let firstCard = document.getElementById(firstCard.id)
-                let secondCard = document.getElementById(secondCard.id)
-
-                firstCard.classList.remove('flip')
-                secontCard.classList.remove('flip')
-                clearCard()
-
-
-            
+            if(game.checkMatch()){
+    
+                game.clearCard()
+                if(game.gameOver()){
+                    
+                    let gameOverLayer = document.getElementById("gameOver");
+                    gameOverLayer.style.display = 'flex'
+                }
+            }else{
+    
+                game.disableCard()
+            }
         }
     }
 
-}
 
-// console.log(cards.flatMap(item=>item))
-function clearCard(){
-    this.secondCard = null;
-    this.firstCardfirstCard = null;
-    this.lockMode = false;
-}
-
-function setCard(id) {
-
-    let card = cards.flatMap(item=> item)
-    const fill = card.filter((card)=> card.id === id)
-    console.log(fill[0].flip)
-
-    console.log(firstCard = fill)
-
-    if (fill[0].flip || lockMode){
-        return false;
-    }
-
-    if (!this.firstCard) {
-        firstCard = fill
-        return true;
-    } else {
-        secondCard = fill;
-        lockMode = true;
-        return true;
-    }
-}
-
-
-
-
-function ckeckMatch() {
-    const cardFirst = firstCard[0].icon
-    const cardSecond = secondCard[0].icon
-    return cardFirst === cardSecond
-}
-
-
-
-
-
-function createIdWhithSele(sele) {
-    return sele + parseInt(Math.random() * 1000);
 }
