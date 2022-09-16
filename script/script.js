@@ -58,7 +58,7 @@ function createElementFace(face, card, element) {
 
     if (face === 'front') {
         let iconfront = document.createElement('img')
-        iconfront.src = '../seleçoesIcons/icons8-' + card.icon + '-48.png';
+        iconfront.src = './../seleçoesIcons/icons8-' + card.icon + '-48.png';
 
         cardElementFace.appendChild(iconfront)
     } else {
