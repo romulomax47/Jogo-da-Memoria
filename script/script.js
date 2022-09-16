@@ -63,7 +63,7 @@ function createElementFace(face, card, element) {
         cardElementFace.appendChild(iconfront)
     } else {
         let iconBack = document.createElement('img')
-        iconBack.src = '../img/icons8-trophy-48.png'
+        iconBack.src = './../img/icons8-trophy-48.png'
         cardElementFace.appendChild(iconBack)
     }
     element.appendChild(cardElementFace);
