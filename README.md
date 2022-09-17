@@ -7,7 +7,7 @@ Este projeto é um jogo da memória: Sua missão é achar o par de cada card que
 ## Motivação 
 Surgiu da necessidade pessoal de estudar logica de propramação e responsividade.
 
-# Stacks
+# 🏗️ Stacks
 
 <ul>
 <li>HTML 5</li>
