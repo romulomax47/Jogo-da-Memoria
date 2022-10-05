@@ -9,13 +9,11 @@ Surgiu da necessidade pessoal de estudar logica de propramação e responsividad
 
 ## 🏗️ Stacks
 
-<ul>
-<li>HTML 5</li>
-<li>CSS</li>
-<li>JAVASCRIPTI</li>
-<ul>
+- HTML 5
+- CSS
+- JAVASCRIPTI
 
-### LICENSE 
+#### LICENSE 
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
