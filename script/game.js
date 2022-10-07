@@ -7,7 +7,6 @@ const game = {
     lockMode: false,
 
 
-
     setCard: function (c) {
 
         let card = this.selecoes.filter(item => item.id === c.id)[0]
