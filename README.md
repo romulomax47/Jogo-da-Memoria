@@ -11,7 +11,7 @@ Surgiu da necessidade pessoal de estudar logica de propramação e responsividad
 
 - HTML 5
 - CSS
-- JAVASCRIPTI
+- JAVASCRIPT
 
 ### Deploy do projeto
 [Jogo da Memória](https://romulomax47.github.io/Jogo-da-Memoria/)
