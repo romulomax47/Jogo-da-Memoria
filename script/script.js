@@ -6,17 +6,9 @@ const card = 'card'
 let selecoes;
 
 let gameBoard = document.getElementById('game')
+console.log(gameBoard)
 let btn = document.getElementById('btn')
 // 
-
-btn.addEventListener('click', ()=>{
-
-    window.onload()
-    
-    starGame()
-    
-});
-
 
 starGame()
 
@@ -28,7 +20,7 @@ function starGame() {
 
 function iniciaizarCards(cards) {
     
-    gameBoard.innerHTML = '';
+    // gameBoard.innerHTML = '';
 
     cards.forEach((card)=>{
         let cardElement = document.createElement('div')
@@ -73,7 +65,7 @@ function createElementFace(face, card, element) {
 
 
 function flipCard() {
-    // console.log(this)
+
     if(game.setCard(this)){
 
         this.classList.add('flip')

@@ -32,7 +32,6 @@ const game = {
 
     checkMatch: function(){
 
-
          if(!this.firstCard || !this.secondCard){
             return false
          } 
@@ -132,7 +131,8 @@ const game = {
 
 
     gameOver: function () {
-        console.log(this.selecoes)
+
+
         if(this.selecoes.filter(card=> !card.flip).length === 0){
             return true
         }
