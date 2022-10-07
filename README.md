@@ -14,7 +14,7 @@ Surgiu da necessidade pessoal de estudar logica de propramação e responsividad
 - JAVASCRIPTI
 
 ### Deploy do projeto
-(Jogo da Memória)['https://romulomax47.github.io/Jogo-da-Memoria/']
+[Jogo da Memória]('https://romulomax47.github.io/Jogo-da-Memoria/')
 
 #### LICENSE 
 

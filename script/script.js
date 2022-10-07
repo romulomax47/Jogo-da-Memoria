@@ -8,9 +8,12 @@ let selecoes;
 let gameBoard = document.getElementById('game')
 console.log(gameBoard)
 let btn = document.getElementById('btn')
-// 
+console.log(btn)
 
-starGame()
+
+    starGame()
+
+
 
 function starGame() {
 

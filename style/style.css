@@ -85,21 +85,6 @@ body{
     text-align: center;
 }
 
-/* #gameOver #btn{
-    padding: 20px;
-    font-size: 20px;
-
-    background-color: yellow;
-
-    border-radius: 10px;
-    border:none;
-
-    cursor: pointer;
-
-    margin-top: 10px;
-
-    font-weight: bold;
-} */
 #game{
   
     max-width: 700px;
