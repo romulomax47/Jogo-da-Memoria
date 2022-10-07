@@ -13,6 +13,9 @@ Surgiu da necessidade pessoal de estudar logica de propramação e responsividad
 - CSS
 - JAVASCRIPTI
 
+### Deploy do projeto
+(Jogo da Memória)['https://romulomax47.github.io/Jogo-da-Memoria/']
+
 #### LICENSE 
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
