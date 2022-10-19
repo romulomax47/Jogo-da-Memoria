@@ -13,17 +13,33 @@
 </head>
 
 <body>
-    <section id="game">
+    <section id="game"></section>
 
-    </section>
+    <div id="interaçaoInicial">
 
-    <div id ="gameOver">
+        <div id = "box">
+
+            <h1>Jogo da memória</h1>
+
+            <form >
+
+                <input type="text" id ='name'name = 'nome' placeholder="Digite seu nome">
+                <button id="iniciarGame" >INICIAR JOGO</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div id="gameOver">
+
         <p>Parabens, você completou o jogo!</p>
-        <img src="./img/icons8-trophy-48.png" alt="trophy">
-
-        <!-- <button id="btn">Jogue Novamente</button> -->
+        <img src="./img/icons8-trophy-48.png">
+        <button class="btnGameOver">Jogar novamente</button>
 
     </div>
+
+
     <script src="./script/game.js"></script>
     <script src="./script/script.js"></script>
 </body>

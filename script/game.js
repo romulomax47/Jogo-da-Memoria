@@ -1,19 +1,39 @@
 
+
 const game = {
 
+    times: [
+        'brasil',
+        'argentina',
+        'alemanha',
+        'catar',
+        'frança',
+        'bélgica',
+        'croácia',
+        'inglaterra',
+        'portugal',
+        'senegal'
+    ],
+    
+    cards: [],
     
     firstCard: null,
     secondCard: null,
     lockMode: false,
 
+    interaçaoInicial: () =>{
 
-    setCard: function (c) {
+    },
 
-        let card = this.selecoes.filter(item => item.id === c.id)[0]
+
+    setCard: function (time) {
+
+       let card = this.cards.filter(item => item.id === time.id)[0];
 
         if(card.flip || this.lockMode){
-            return false
+            return false;
         }
+
         if(!this.firstCard){
 
             this.firstCard = card; 
@@ -26,7 +46,7 @@ const game = {
             this.secondCard.flip = true;
             this.lockMode = true;
 
-            return true
+            return true;
         }
     },
 
@@ -39,32 +59,19 @@ const game = {
         return this.firstCard.icon === this.secondCard.icon 
     },
 
-    selecoes: [
-        'brasil',
-        'argentina',
-        'alemanha',
-        'catar',
-        'frança',
-        'bélgica',
-        'croácia',
-        'inglaterra',
-        'portugal',
-        'senegal',
-    ],
+  
+    createCardfronSele: function() {
+        this.cards = [];  
 
-    cards: null,
+        this.times.forEach((time) => {
 
-    createCardfronSele: function (selecoes) {
+            this.cards.push(this.createPairFromSelecoes(time))
+        }) 
+    
 
-        this.cards = [];
-
-        for (let selecao of selecoes) {
-            this.cards.push(this.createPairFromSelecoes(selecao))
-
-        }
-        this.selecoes = this.cards.flatMap(card => card)
+        this.cards = this.cards.flatMap(card => card);
         this.shuffleCars();
-        return this.selecoes
+        return this.cards;
     },
 
     createPairFromSelecoes: function (cardSelecao) {
@@ -88,13 +95,15 @@ const game = {
     },
 
     shuffleCars: function () {
-        let currentIndex = this.selecoes.length;
+
+        let currentIndex = this.cards.length;
         let randomIndex = 0;
 
         while (currentIndex !== 0) {
+            
             randomIndex = Math.floor(Math.random() * currentIndex);
             currentIndex--;
-            [this.selecoes[randomIndex], this.selecoes[currentIndex]] = [this.selecoes[currentIndex], this.selecoes[randomIndex]]
+            [this.cards[randomIndex], this.cards[currentIndex]] = [this.cards[currentIndex], this.cards[randomIndex]];
 
         }
 
@@ -132,13 +141,14 @@ const game = {
 
     gameOver: function () {
 
-
-        if(this.selecoes.filter(card=> !card.flip).length === 0){
+        if(this.cards.filter(card=> !card.flip).length === 0){
             return true
         }
 
    
 
     }
+
+
 
 }
