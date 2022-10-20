@@ -14,48 +14,28 @@ const teste = document.querySelector('#interaçaoInicial');
 
 const btnIniciar = document.querySelector('#iniciarGame');
 
-let minuto = 0
-
-
-
 window.onload = async() => {
     starGame();
     
     btnIniciar.addEventListener('click', setTime);
     const form = document.querySelector('form');
-
- 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-    })
-
-
-
-
-    
-    
+   
 };
 
 btnGameOver.addEventListener('click', () => {
-    game.clearCard()
+    // game.clearCard()
 
-    iniciaizarCards(game.createCardfronSele(game.selecoes));
-    
-    
     let gameOverLayer = document.getElementById("gameOver");
     gameOverLayer.style.display = 'none'; 
     return  
 })
 
 function setTime(){
-    const nome = document.querySelector('#name').value;
-    console.log(nome)
+
+    starGame();
     
     const teste = document.querySelector('#interaçaoInicial');
     teste.style.display = 'none';
-
-    time = settimeout(game.time, 1000)
-
     
 }
 
