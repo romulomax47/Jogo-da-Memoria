@@ -14,6 +14,7 @@ const teste = document.querySelector('#interaçaoInicial');
 
 const btnIniciar = document.querySelector('#iniciarGame');
 
+let minuto = 0
 
 
 
@@ -27,6 +28,8 @@ window.onload = async() => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
     })
+
+
 
 
     
@@ -51,9 +54,8 @@ function setTime(){
     const teste = document.querySelector('#interaçaoInicial');
     teste.style.display = 'none';
 
-    time = setTimeout(() => {
-        
-    }, 1000);
+    time = settimeout(game.time, 1000)
+
     
 }
 

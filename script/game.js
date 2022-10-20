@@ -147,8 +147,14 @@ const game = {
 
    
 
-    }
+    },
 
+    minutos: 0,
+
+    time: () =>{
+        this.mitunos++
+        console.log(this.minutos)
+    }
 
 
 }
