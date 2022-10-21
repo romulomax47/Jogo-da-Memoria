@@ -51,8 +51,6 @@ function currentTime() {
     seconds = setSeconds(seconds);
     seconds++;
     
-    console.log(minute, seconds)
-
 }
 
 function setSeconds(s){
