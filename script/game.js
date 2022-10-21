@@ -1,6 +1,6 @@
 
-
 const game = {
+
 
     times: [
         'brasil',
@@ -14,16 +14,11 @@ const game = {
         'portugal',
         'senegal'
     ],
-    
     cards: [],
     
     firstCard: null,
     secondCard: null,
     lockMode: false,
-
-    interaçaoInicial: () =>{
-
-    },
 
 
     setCard: function (time) {
@@ -148,13 +143,5 @@ const game = {
    
 
     },
-
-    minutos: 0,
-
-    time: () =>{
-        this.mitunos++
-        console.log(this.minutos)
-    }
-
 
 }

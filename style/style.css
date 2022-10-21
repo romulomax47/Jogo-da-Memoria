@@ -32,13 +32,14 @@ body{
 }
 
 #interaçaoInicial div{
-    width: 20rem;
+    padding: 2rem;
+
+    width: 15                                       rem;
     height: 15rem;
 
     background-color: #ededed;
 
 
-    padding: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -135,9 +136,9 @@ body{
     align-items: center;
     justify-content: center;
 }
-#gameOver p{
+#gameOver span{
     font-weight: bold;
-
+    font-size: 20px;
     margin-bottom: 10px;
 
     width: 100%;
@@ -180,6 +181,9 @@ body{
     #gameOver{
         font-size: 30px;
         width: 100%;
+    }
+    #gameOver, span{
+        font-size: 18px;
     }
 
     #gameOver #btn{

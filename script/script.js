@@ -14,21 +14,49 @@ const teste = document.querySelector('#interaçaoInicial');
 
 const btnIniciar = document.querySelector('#iniciarGame');
 
+
+let cron;
+let seconds = 0;
+let minute =  0;
+let tempoTotal;
+
 window.onload = async() => {
     starGame();
     
     btnIniciar.addEventListener('click', setTime);
-    const form = document.querySelector('form');
    
 };
 
 btnGameOver.addEventListener('click', () => {
-    // game.clearCard()
 
     let gameOverLayer = document.getElementById("gameOver");
     gameOverLayer.style.display = 'none'; 
+    starGame();
     return  
-})
+});
+
+function currentTime() {
+
+    if( seconds == 60){
+
+        seconds = 0;
+        minute++;
+        return
+    }
+    
+    seconds = setSeconds(seconds);
+    seconds++;
+   
+
+}
+
+function setSeconds(s){
+    if(s > 9) {
+        return s
+    }else{
+        return '0' + seconds
+    }
+}
 
 function setTime(){
 
@@ -37,7 +65,10 @@ function setTime(){
     const teste = document.querySelector('#interaçaoInicial');
     teste.style.display = 'none';
     
+    cron = setInterval(currentTime, 1000);
 }
+
+
 
 function starGame() {
 
@@ -101,15 +132,22 @@ function flipCard() {
 
             if(game.checkMatch()){
     
-                game.clearCard()
+                game.clearCard();
+
                 if(game.gameOver()){
-                    
+                    clearInterval(cron);
+
                     let gameOverLayer = document.getElementById("gameOver");
+                    let spanMsg = document.querySelector('span')
+                    spanMsg.innerHTML = `Seu tempo foi de ${minute} Minuto e ${seconds} Segundos`;
+    
                     gameOverLayer.style.display = 'flex';
+      
                 }
             }else{
                 
                 game.disableCard()
+              
                 
             }
         }
