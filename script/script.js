@@ -30,8 +30,12 @@ window.onload = async() => {
 btnGameOver.addEventListener('click', () => {
 
     let gameOverLayer = document.getElementById("gameOver");
-    gameOverLayer.style.display = 'none'; 
+    gameOverLayer.style.display = 'none';
+
     starGame();
+    seconds = 0;
+    minute = 0;
+    cron = setInterval(currentTime, 1000);
     return  
 });
 
@@ -46,7 +50,8 @@ function currentTime() {
     
     seconds = setSeconds(seconds);
     seconds++;
-   
+    
+    console.log(minute, seconds)
 
 }
 
