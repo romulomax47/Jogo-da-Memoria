@@ -17,14 +17,20 @@ const btnIniciar = document.querySelector('#iniciarGame');
 
 let cron;
 let seconds = 0;
-let minute =  0;
+let minute = 0;
 let tempoTotal;
 
-window.onload = async() => {
+window.onload = async () => {
     starGame();
-    
+
     btnIniciar.addEventListener('click', setTime);
-   
+
+};
+
+function getTime(minuto, segund) {
+    return minuto > 0 
+            ? `Seu tempo foi de ${minuto}:${segund}` 
+            : `Seu tempo foi de ${segund} segundos`
 };
 
 btnGameOver.addEventListener('click', () => {
@@ -36,45 +42,42 @@ btnGameOver.addEventListener('click', () => {
     seconds = 0;
     minute = 0;
     cron = setInterval(currentTime, 1000);
-    return  
+    return
 });
 
 function currentTime() {
 
-    if( seconds == 60){
+    if (seconds == 60) {
 
         seconds = 0;
         minute++;
         return
     }
-    
+
     seconds = setSeconds(seconds);
     seconds++;
-    
+
 }
 
-function setSeconds(s){
-    if(s > 9) {
+function setSeconds(s) {
+    if (s > 9) {
         return s
-    }else{
+    } else {
         return '0' + seconds
     }
 }
 
-function setTime(){
-
+function setTime() {
     starGame();
-    
     const teste = document.querySelector('#interaçaoInicial');
     teste.style.display = 'none';
-    
+
     cron = setInterval(currentTime, 1000);
 }
 
 
 
 function starGame() {
-
     iniciaizarCards(game.createCardfronSele())
 
 }
@@ -83,7 +86,7 @@ function iniciaizarCards(cards) {
     const game = document.querySelector('#game');
     game.innerHTML = '';
 
-    cards.forEach((card) =>{
+    cards.forEach((card) => {
 
         let cardElement = document.createElement('div')
         cardElement.id = card.id;
@@ -128,30 +131,27 @@ function createElementFace(face, card, element) {
 
 function flipCard() {
 
-    if(game.setCard(this)){
+    if (game.setCard(this)) {
 
         this.classList.add('flip')
-        if(game.secondCard){
+        if (game.secondCard) {
 
-            if(game.checkMatch()){
-    
+            if (game.checkMatch()) {
+
                 game.clearCard();
 
-                if(game.gameOver()){
+                if (game.gameOver()) {
                     clearInterval(cron);
 
                     let gameOverLayer = document.getElementById("gameOver");
                     let spanMsg = document.querySelector('span')
-                    spanMsg.innerHTML = `Seu tempo foi de ${minute} Minuto e ${seconds} Segundos`;
-    
+                    spanMsg.innerHTML = getTime(minute, seconds)
                     gameOverLayer.style.display = 'flex';
-      
+
                 }
-            }else{
-                
+            } else {
                 game.disableCard()
-              
-                
+
             }
         }
     }

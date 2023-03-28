@@ -4,6 +4,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+input, button{
+    background: none;
+    border: none;
+
+}
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -32,45 +37,26 @@ body{
 }
 
 #interaçaoInicial div{
-    padding: 2rem;
-
-    width: 15                                       rem;
-    height: 15rem;
-
+    padding: 2rem;                                    
     background-color: #ededed;
-
-
-
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-
     align-items: center;
-
     text-align: center;
-
+    font-size: 2rem;
     border-radius: .8rem;
-
-
-
 }
 
 #interaçaoInicial div h1{
     margin-bottom: 1.3rem;
 }
 #interaçaoInicial div button{
-    margin-top: 15px;
-
-    width: 100%;    
-    height: 30px;
-    background-color: yellow;
-    border: none;
-    border-radius: 10px;
-
-    text-transform: uppercase;
-
-    font-weight: bold;
-
+    width: 300px;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 20px;
+    background: yellow;    
     cursor: pointer;
 }
 
@@ -120,14 +106,13 @@ body{
 
 #gameOver{
     position: absolute;  
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.9);
-
-    top: 0;
-    left: 0;
-
     color: white;
     font-size: 40px;
 
@@ -136,17 +121,8 @@ body{
     align-items: center;
     justify-content: center;
 }
-#gameOver span{
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
 
-    width: 100%;
-    text-align: center;
-}
-
-#game{
-  
+#game{ 
     max-width: 700px;
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr  / 1fr 1fr 1fr 1fr 1fr;
@@ -154,16 +130,24 @@ body{
 
     
 }
+#gameOver span{
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 10px;
 
-.btnGameOver{
-    width: fit-content;
-
-    padding: 5px 10px;
-    background-color: yellow;
-
-    cursor: pointer;
+    width: 100%;
+    text-align: center;
 }
 
+.btnGameOver{
+    width: 300px;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    padding: 20px;
+    background: yellow;    
+    cursor: pointer;
+}
 @media(max-width: 700px ){
     #game{
         width: 500px;
